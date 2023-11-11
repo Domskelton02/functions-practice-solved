@@ -7,7 +7,19 @@
 
 export function flatArrays(array) {
   // Your code goes here...
+  let combined = [];
 
+  for (let i = 0; i < array.length; i++) {
+    if (Array.isArray(array[i])) {
+      for (let j = 0; j < array[i].length; j++) {
+        combined.push(array[i][j]);
+      }
+    } else {
+      combined.push(array[i]);
+    }
+  }
+  
+  return combined;
 }
 
 
